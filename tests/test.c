@@ -24,6 +24,7 @@
  */
 #include <console.h>
 #include <ktf.h>
+#include <real_mode.h>
 #include <sched.h>
 
 #ifdef KTF_UNIT_TEST
@@ -73,6 +74,8 @@ void test_main(void) {
     usermode_call(func, NULL);
 
 #ifdef KTF_UNIT_TEST
+    long_to_real();
+
     printk("\nLet the UNITTESTs begin\n");
     printk("Commandline parsing: %s\n", kernel_cmdline);
 
